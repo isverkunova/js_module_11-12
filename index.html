@@ -1,0 +1,84 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>HW_11-12</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <script src="js/plugin.js"></script>
+    <script src="js/template.js"></script>
+    <script src="js/script.js"></script>
+</head>
+<body>
+    <section class="carousel">
+        <div class="carouselLeftArrow">&larr;</div>
+        <div class="carouselHider">
+            <ul class="carouselList">
+                <li class="carouselElement">
+                    <img src="img/pyramid.jpg" alt="The Great Pyramid of Cheops">
+                    <p>The Great Pyramid of Cheops</p>
+                </li>
+                <li class="carouselElement">
+                    <img src="img/gardens.jpg" alt="The Hanging Gardens of Semiramis">
+                    <p>The Hanging Gardens of Semiramis</p>
+                </li>
+                <li class="carouselElement">
+                    <img src="img/zeus.jpg" alt="The Statue of Zeus at Olympia">
+                    <p>The Statue of Zeus at Olympia</p>
+                </li>
+                <li class="carouselElement">
+                    <img src="img/artemid.jpg" alt="The Temple of Artemis">
+                    <p>The Temple of Artemis</p>
+                </li>
+                <li class="carouselElement">
+                    <img src="img/mausoleum.jpg" alt="The Mausoleum at Halicarnassus">
+                    <p>The Mausoleum at Halicarnassus</p>
+                </li>
+                <li class="carouselElement">
+                    <img src="img/collos.png" alt="The Colossus of Rhodes">
+                    <p>The Colossus of Rhodes</p>
+                </li>
+                <li class="carouselElement">
+                    <img src="img/lighthouse.jpg" alt="The Lighthouse of Alexandria">
+                    <p>The Lighthouse of Alexandria</p>
+                </li>
+            </ul>
+        </div>
+        <div class="carouselRightArrow">&rarr;</div>
+    </section>
+    <!--END carousel-->
+
+    <section class="template">
+        <script type="text/html" id="resumeTemplate">
+            <div class="resume">
+                <div class="container border">
+                    <h1 class="student-name"><%= name %></h1>
+                    <img class="student-avatar" src="<%= photo.src %>" alt="<%= photo.alt %>">
+                    <p class="student-description"><%= status %></p>
+                </div>
+
+                <div class="container border">
+                    <p class="study-reason">Хочу учить фронтэнд потому что:</p>
+                    <ul class="study-reason-list">
+                        <% for (var i = 0; i < reasons.length; i++) { %>
+                        <li><%= reasons[i] %></li>
+                        <% }; %>
+                    </ul>
+                </div>
+
+                <div class="container border">
+                    <p class="telephone-title">Мой контактный телефон</p>
+                    <p class="telephone-number"><%= number %></p>
+                    <p class="vk-title">Мой профиль вконтакте</p>
+                    <a class="vk-link" href="http://vk.com/<%= vkId %>" target=”_blank”>vk.com/<%= vkId %></a>
+                </div>
+
+                <div class="container">
+                    <p class="feedback-title">Мой фидбек:)</p>
+                    <p class="feedback-text"><%= feedback %></p>
+                </div>
+            </div>
+        </script>
+    </section>
+</body>
+</html>
